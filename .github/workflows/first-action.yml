@@ -1,0 +1,13 @@
+name: First Workflow # sets the display name for your automation pipeline
+on: workflow_dispatch  # on define  when the event should be triggerered
+jobs:  #Every workflow must contain at least one job. A job is simply a grouping of individual execution steps.
+  first-job:
+  #This is a custom identifier or "ID" you gave to this specific block of work. You could name this anything (like test-code or print-messages). 
+  #GitHub uses this ID to show your job's progress on your dashboard interface.
+    runs-on: ubuntu-latest #This tells GitHub what type of cloud operating system (Runner) it needs to rent for you.This creates a VM where your
+    #automation pipeline code can work e.g. provides a platform.
+    steps: # indicates a sequential checklist of individual tasks that the Ubuntu runner machine must execute from top to bottom.
+      - name: Print greeting # text label describing the step
+        run: echo "Heelo World"  # tells the Linux server to execute an actual command-line script.
+      - name: Print goodbye
+        run: echo "Byee byee!"
